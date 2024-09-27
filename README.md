@@ -14,6 +14,12 @@
 1.  将acaddoc.lsp添加到AutoCAD的支持文件搜索路径里
 2.  点击文件-导入文件，导入Universal.bas和ACAD_Only.bas两个文件。Universal.bas中的函数可以在AutoCAD、Word、Excel等各种支持VBA环境的软件中运行，ACAD_Only.bas中的函数只能在AutoCAD中运行
 3.  导入example文件夹中的example.bas，可查看其中的示例。其中的例子改编自科学出版社《AutoCAD完全应用指南》（2011年4月第一版）中的示例，书中的示例为AutoLISP程序，文件中改为用VBA实现
-4.  点击插入-模块，在新插入的模块中写自己的代码。如果将函数名设置为以“c_”开头，则在AutoCAD打开新文件时，会自动将该函数注册为可以直接执行的AutoCAD命令（类似于AutoLISP中以“c:”开头的函数）
-
+4.  点击插入-模块，在新插入的模块中写自己的代码
+5.  程序的基本结构：
+```basic
+Sub c_name() '以“c_”开头的函数会被注册为AutoCAD命令（类似于AutoLISP中以“c:”开头的函数）
+    vba_start '初始化vba函数库
+    '业务代码放在这里
+End Sub
+```
 
